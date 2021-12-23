@@ -10,14 +10,15 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    display: grid;
-    align-content: center;
-    justify-content: center;
     width: 100vw;
     height: 100vh;
 }
 
 .filter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     gap: 20px;
     background: var(--dark-gray);
@@ -33,10 +34,12 @@ body{
     font-size: 26px;
     border-radius: 50%;
     background: transparent;
+    transition: all .5s;
 }
 .filter-btn.active{
     background: var(--dark-green);
 }
 .filter-btn:hover, .filter-btn.filter:hover{
     background: var(--orange);
+    
 }

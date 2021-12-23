@@ -11,24 +11,25 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    display: grid;
-    align-content: center;
-    justify-content: center;
     width: 100vw;
     height: 100vh;
     background: lightgray;
 }
 
 table.notification{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: #fff;
     height: 120px;
     width: 1335px;
     border-spacing: 0;
+    border-collapse: collapse;
 
 }
 .notification td:not(:first-child) {
-    border-right: 15px solid transparent;
-    border-left: 15px solid transparent;
+    padding: 15px;
 }
 .ntf-image{
     width: 120px;
@@ -51,6 +52,9 @@ table.notification{
     font-weight: 700;
     padding-right: 50px;
 }
+.btn-col{
+    text-align: center;
+}
 .ntf-btn{
     width: 56px;
     height: 56px;
@@ -60,6 +64,7 @@ table.notification{
     font-size: 28px;
     color: #fff;
     background: var(--dark-green);
+    transition: .5s;
 }
 .ntf-btn:hover, .ntf-btn.active:hover{
     background: var(--nft-btn-hover-color);

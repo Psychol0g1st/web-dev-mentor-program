@@ -13,14 +13,15 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    display: grid;
-    align-content: center;
-    justify-content: center;
     width: 100vw;
     height: 100vh;
 }
 
 .error-message{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 500px;
     height: 150px;
     display: grid;
@@ -54,6 +55,7 @@ body{
     background: var(--button-bg-color);
     color: #FFF;
     padding: 8px 32px;
+    transition: .5s;
 }
 .delete-btn{
     background: var(--button-bg-warn-color);
