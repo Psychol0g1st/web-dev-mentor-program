@@ -1,0 +1,69 @@
+:root{
+    --dark-green: #006633;
+    --orange: #DF7E24;
+    --nft-btn-hover-color: #9145B6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background: lightgray;
+}
+
+table.notification{
+    background: #fff;
+    height: 120px;
+    width: 1335px;
+    border-spacing: 0;
+
+}
+.notification td:not(:first-child) {
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+}
+.ntf-image{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+.ntf-image img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ntf-title{
+    width: 620px;
+    font-size: 28px;
+    font-weight: 700;
+}
+.ntf-timestamp{
+    font-size: 20px;
+    font-weight: 700;
+    padding-right: 50px;
+}
+.ntf-btn{
+    width: 56px;
+    height: 56px;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    font-size: 28px;
+    color: #fff;
+    background: var(--dark-green);
+}
+.ntf-btn:hover, .ntf-btn.active:hover{
+    background: var(--nft-btn-hover-color);
+}
+.ntf-btn.active{
+    background: var(--orange);
+}
