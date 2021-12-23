@@ -1,0 +1,64 @@
+:root{
+    --dark-green: #006633;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.profile-1, .profile-2{
+    background: var(--dark-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+.profile-1{
+    width: 300px;
+    height: 300px;
+    border-radius: 44px;
+    justify-content: space-evenly;
+    font-size: 26px;
+    font-weight: 700;
+}
+.profile-1 > img{
+    display: block;
+    width: 235px;
+    height: 235px;
+    border-radius: 44px 44px 0 0;
+}
+
+.profile-2{
+    width: 300px;
+    height: 125px;
+    background: var(--dark-green);
+    border-radius: 36px;
+    position: relative;
+    justify-content: end;
+    padding-bottom: 10px;
+}
+.profile-2 > img{
+    display: block;
+    background: var(--dark-green);
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    border: 3px solid var(--dark-green);
+    border-radius: 50%;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.profile-2 .name{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+}
