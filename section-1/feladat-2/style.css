@@ -1,12 +1,66 @@
+:root{
+    --dark-green: #006633;
+    --button-border-color: #F2F2F2;
+    --button-bg-color: #BFBFBF;
+    --button-bg-hover-color: #868686;
+    --button-bg-warn-color: #EF3A43;
+    --button-bg-warn-hover-color: #a7292f;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
+    font-family: 'Roboto', sans-serif;
     display: grid;
     align-content: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
+}
+
+.error-message{
+    width: 500px;
+    height: 150px;
+    display: grid;
+    background: var(--dark-green);
+    border-radius: 16px;
+}
+.message-text{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    display: grid;
+    align-content: center;
+    line-height: 1.5;
+}
+.secondary-text{
+    font-weight: normal;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn{
+    outline: none;
+    border: 1px solid var(--button-border-color);
+    height: 40px;
+    border-radius: 8px;
+    background: var(--button-bg-color);
+    color: #FFF;
+    padding: 8px 32px;
+}
+.delete-btn{
+    background: var(--button-bg-warn-color);
+}
+.delete-btn:hover{
+    background: var(--button-bg-warn-hover-color);
+}
+.cancel-btn:hover{
+    background: var(--button-bg-hover-color);
 }
