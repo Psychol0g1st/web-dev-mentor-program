@@ -1,0 +1,99 @@
+:root{
+    --dark-green: #006633;
+    --green: #55AE3A; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+.subscribe-window{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 360px;
+    background-color: var(--dark-green);
+    color: #fff;
+    padding: 0 50px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+.subscribe-window .title{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+.subscribe-window .title i{
+    margin-right: 10px;
+    font-size: 2.5rem;
+}
+.subscribe-window form > input{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    font-size: 2rem;
+    border: 2px solid var(--green);
+    outline: none;
+}
+.subscribe-window form > input::placeholder{
+    color: #000;
+}
+.subscribe-window form input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+}
+.checkbox-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.checkbox-container > label > span{
+    text-decoration: underline;
+    font-weight: bold;
+}
+.submit-btn, .submit-btn input{
+    width: 240px;
+    height: 50px;
+    border-radius: 25px;
+}
+.submit-btn{
+    position: relative;
+    margin: 30px auto 0;
+    background: var(--green);
+    box-shadow: 0px 2px 4px #1E1E22;
+
+}
+.submit-btn input{
+    position: absolute;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    padding-left: calc(1em + 5px);
+    padding-right: 10px;
+}
+.submit-btn .bell-i{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    padding-left: 15px;
+}
+
+
+
