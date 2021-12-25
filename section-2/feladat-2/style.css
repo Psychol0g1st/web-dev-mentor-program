@@ -1,0 +1,119 @@
+:root{
+    --dark-green: #006633;
+    --green: #55AE3A; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+header{
+    max-width: 1920px;
+    height: 85px;
+    color: #fff;
+    background-color: var(--dark-green);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    gap: 20px;
+}
+
+header a{
+    color: #fff;
+    text-decoration: none;
+}
+
+header button{
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: inherit;
+    color: inherit;
+}
+
+.user-help-btn {
+    display: none;
+}
+
+.header-logo{
+    height: 100%;
+}
+header ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+.option-list{
+    margin-left: auto;
+}
+
+.page-list i{
+    margin-right: 10px;
+}
+
+.page-list a:hover{
+    border-bottom: 3px solid #fff;
+}
+
+.option-list .profile{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid #f2f2f2;
+}
+.option-list .profile img{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    display: block;
+}
+
+@media screen and (max-width: 700px) {
+    header{
+        padding: 5px;
+        height: 40px;
+        font-size: 1.25rem;
+        position: relative;
+    }
+    .user-help-btn {
+        display: block;
+    }
+    
+    .header-logo{
+        padding: inherit;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .page-list{
+        display: none;
+    }
+    .option-list .profile{
+        width: 32px;
+        height: 32px;
+    }
+    header ul, header{
+        gap: 15px;
+    }
+    .option-list li:not(.settings, .profile){
+        display: none;
+    }
+    .option-list .profile{
+        order: -1;
+    }
+}
+@media screen and (max-width: 1450px) {   
+    .page-list{
+        display: none;
+    }
+}
+
