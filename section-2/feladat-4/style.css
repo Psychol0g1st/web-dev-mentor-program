@@ -12,3 +12,68 @@ body{
     width: 100vw;
     height: 100vh;
 }
+
+.profile{
+    background: var(--green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    border-radius: 44px;
+    padding: 5px 25px;
+    font-size: 16px;
+}
+.profile > img{
+    display: block;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.profile .name{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.profile .icon{
+    width: 30px;
+    height: 30px;
+    background: var(--dark-green);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile .profession{
+    font-size: 16px;
+    font-weight: normal;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.profession .icon{
+    width: 22px;
+    height: 22px;
+}
+
+.profile .about-text{
+    text-align: justify;
+    margin-bottom: 10px;
+}
+.profile .contact-list a{
+    color: #fff;
+    text-decoration: none;
+}
+.profile .contact-list{
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+
