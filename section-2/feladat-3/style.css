@@ -1,0 +1,38 @@
+:root{
+    --dark-green: #006633;
+    --green: #55AE3A; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+table{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    table-layout: fixed;
+    width: 1720px;
+    background: var(--dark-green);
+    color: #fff;
+    height: 56px;
+    font-size: 1.5rem;
+    text-align: left;
+    padding: 0 10px;
+}
+table tr th:first-child{
+    width: 5%;
+}
+table tr th:last-child{
+    width: 2%;
+}
+.image, .clock{
+    width: 10%;
+}

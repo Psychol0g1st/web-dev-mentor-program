@@ -9,11 +9,14 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    width: 100vw;
     height: 100vh;
 }
 
 header{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     max-width: 1920px;
     height: 85px;
     color: #fff;
@@ -28,6 +31,7 @@ header{
 header a{
     color: #fff;
     text-decoration: none;
+    transition: border .25s;
 }
 
 header button{
