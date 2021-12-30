@@ -20,7 +20,14 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 700px;
+    height: 400px;
     background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+.post-container img{
+    display: block;
+    object-fit: cover;
 }
 .footer{
     width: 100%;
@@ -30,10 +37,7 @@ body{
     align-items: center;
     gap: 20px;
 }
-.post-container img{
-    display: block;
-    width: 100%;
-}
+
 .category{
     width: fit-content;
     padding: 0 30px;

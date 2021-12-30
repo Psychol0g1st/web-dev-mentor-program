@@ -27,13 +27,16 @@ body{
     border-radius: 44px;
     padding: 5px 25px;
     font-size: 16px;
+    gap: 10px;
 }
 .profile > img{
     display: block;
     width: 128px;
     height: 128px;
     border-radius: 50%;
-    margin-bottom: 10px;
+}
+.profile .name-container{
+    text-align: center;
 }
 .profile .name{
     font-size: 20px;
@@ -43,8 +46,7 @@ body{
 .profile .icon{
     width: 30px;
     height: 30px;
-    background: var(--dark-green);
-    color: #fff;
+    background: var(--dark-green); 
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -56,7 +58,6 @@ body{
     display: flex;
     gap: 5px;
     align-items: center;
-    margin-bottom: 10px;
 }
 .profession .icon{
     width: 22px;
@@ -65,7 +66,6 @@ body{
 
 .profile .about-text{
     text-align: justify;
-    margin-bottom: 10px;
 }
 .profile .contact-list a{
     color: #fff;
