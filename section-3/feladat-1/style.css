@@ -1,0 +1,211 @@
+:root{
+    --dark-green: #006633;
+    --green: #55AE3A;
+    --red: #EF3A43;
+    --yellow: #FFE600;
+    --orange: #DF7E24;
+    --white: #fff;
+    --black: #000;
+    --dark-gray: #7f7f7f;
+    --gray: #BFBFBF;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background: #f1f1f1;
+}
+
+.login-container{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    padding: 15px;
+    width: 300px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    gap: 20px;
+}
+.login-container h1{
+    font-size: 2em;
+    font-weight: 700;
+}
+.login-container h4{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.login-reg{
+    width: 100%;
+    height: 36px;
+    border: 1px solid var(--green);
+    border-radius: 36px;
+}
+.login-reg a{
+    width: 50%;
+    float: left;
+    color: var(--dark-green);
+    text-transform: uppercase;
+    text-decoration: none;
+    height: 100%;
+    line-height: 34px;
+    text-align: center;
+    transition: 0.5s;   
+}
+.login-reg a.active{
+    color: var(--white);
+    background: var(--dark-green);
+}
+.login-reg a:nth-child(1){
+    border-radius: 36px 0 0 36px;
+}
+.login-reg a:nth-child(2){
+    border-radius: 0 36px 36px 0;
+}
+.login-reg a:hover{
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.login-container form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.login-container form input{
+    height: 36px;
+    width: 100%;
+    border: 1px solid var(--dark-green);
+    outline: none;
+    color: var(--green);
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 36px;
+}
+.login-container form input::placeholder{
+    color: var(--green);
+}
+.login-container form input[type="email"]:invalid{
+    border-color: var(--red);
+}
+.login-container form input[type="email"] ~ .wrong-email{
+    visibility: hidden;
+    margin-left: 10px;
+    color: var(--red);
+    font-size: 0.75em;
+    margin-bottom: 5px;
+}
+.login-container form input[type="email"]:invalid ~ .wrong-email{
+    visibility: visible;
+}
+
+.login-container form .password-container{
+    position: relative;
+}
+.login-container form input[type="password"]::-ms-reveal{
+    display: none;
+}
+.login-container form .password-container .show-password{
+    position: absolute;
+    right: 10px;
+    color: var(--green);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25em;
+}
+.login-container form .forgot-pass{
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: var(--black);
+    margin-left: 10px;
+}
+.login-container form .forgot-pass:hover{
+    text-decoration: underline;
+}
+.login-container form #rememberme{
+    display: none;
+}
+.login-container form #rememberme ~ label{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+.login-container form #rememberme ~ label .toggle{
+    display: inline-block;
+    width: 35px;
+    background: var(--gray);
+    height: 20px;
+    position: relative;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.login-container form #rememberme ~ label .toggle::before{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: var(--dark-gray);
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    transition: 0.5s;
+}
+.login-container form #rememberme:checked ~ label .toggle::before {
+    left:15px;
+    background: var(--green);
+}
+.login-container form input[type="submit"]{
+    background: var(--dark-green);
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: 0.5s;
+}
+.login-container form input[type="submit"]:hover{
+    background: var(--orange);
+}
+.hr-or{
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 10px;
+    width: 100%;
+}
+.hr-or::before, .hr-or::after{
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--green);
+}
+
+.login-with a{
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50%;
+    background: var(--dark-green);
+    font-size: 1.5em;
+    line-height: 38px;
+    text-align: center;
+    margin: 0 7.5px;
+    transition: 0.5s;
+}
+.login-with a:hover{
+    background: var(--orange);
+}

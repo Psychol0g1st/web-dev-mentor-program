@@ -1,0 +1,14 @@
+:root{
+    --dark-green: #006633;
+    --green: #55AE3A; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
