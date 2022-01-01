@@ -1,0 +1,186 @@
+:root{
+    --dark-green: #006633;
+    --green: #55AE3A;
+    --red: #EF3A43;
+    --yellow: #FFE600;
+    --orange: #DF7E24;
+    --white: #fff;
+    --black: #000;
+    --dark-gray: #7f7f7f;
+    --gray: #BFBFBF;
+    --light-green: #B1DDC4;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background: var(--gray);
+}
+
+.profile-container{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--white);
+    display: grid;
+    grid-auto-flow: row;
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.profile-image{
+    display: block;
+    width: 265px;
+    height: 265px;
+    border-radius: 50%;
+}
+
+.profile-container .name{
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+.description{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.description .personal-data{
+    width: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+.description .personal-data p{
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+.description.text p{
+    text-align: justify;
+    font-size: 1.15rem;
+} 
+
+.data-icon{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: var(--green);
+    color: var(--white);
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.data-icon.ontop{
+    position: absolute;
+    top: 10px;
+}
+.data-icon.ontop:nth-child(1){
+    left: 10px;
+}
+.data-icon.ontop:nth-child(2){
+    right: 10px;
+}
+
+.follow-btn{
+    border: none;
+    outline: none;
+    background: var(--dark-green);
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 50px;
+    transition: background 0.5s;
+}
+.follow-btn:hover{
+    background: var(--orange);
+}
+
+.icon{
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    background: var(--dark-green); 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.contact-list a{
+    color: var(--black);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.contact-list a span:nth-child(2){
+    display: none;
+}
+.contact-list{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 10px;
+    list-style: none;
+}
+
+@media screen and (min-width:1160px) {
+    
+
+    .profile-image{
+        grid-area: image;
+    }
+    .description.person{
+        grid-area: person;
+        gap: 10px;
+    }
+    .description.text{
+        grid-area: text;
+    }
+    .follow-btn{
+        grid-area: btn;
+    }
+    .personal-data{
+        flex-direction: column;
+        width: fit-content;
+    }
+    .contact-list{
+        grid-area: contactlist;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 10px;
+        justify-items: stretch;
+        width: 100%;
+    }
+    .contact-list a span:nth-child(2){
+        display: inline-block;
+    }
+    .profile-container{
+        grid-template-areas: 
+        "image person text"
+        "image person contactlist"
+        "image btn contactlist";
+        column-gap: 50px;
+        row-gap: 5px;
+    }
+    .data-icon.ontop{
+        display: none;
+    }
+}
