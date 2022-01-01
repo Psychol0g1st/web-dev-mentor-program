@@ -1,0 +1,295 @@
+:root{
+    --dark-green: #006633;
+    --green: #55AE3A;
+    --red: #EF3A43;
+    --yellow: #FFE600;
+    --orange: #DF7E24;
+    --white: #fff;
+    --black: #000;
+    --dark-gray: #7f7f7f;
+    --gray: #BFBFBF;
+    --light-green: #B1DDC4;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+}
+
+header{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--dark-green);
+}
+header > div{
+    height: 85px;
+    color: var(--white);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    gap: 20px;
+}
+
+header a{
+    color: var(--white);
+    text-decoration: none;
+    transition: border .25s;
+}
+
+header button{
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: inherit;
+    color: inherit;
+}
+
+.user-help-btn {
+    display: none;
+}
+
+.header-logo{
+    height: 100%;
+}
+header ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+}
+.option-list{
+    margin-left: auto;
+}
+
+.page-list i{
+    margin-right: 10px;
+}
+
+.page-list a:hover{
+    border-bottom: 3px solid var(--white);
+}
+
+header .profile{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+    transition: 0.5s;
+}
+header .profile:hover{
+    border-width: 3px;
+    border-color: var(--orange);
+}
+header .profile img{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    display: block;
+}
+
+.hover-action{
+    transition: 0.5s;
+}
+.hover-action:hover{
+    color: var(--orange);
+}
+
+header .item{
+    width: 72px;
+    height: 72px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: outline 0.5s;
+}
+header .item{
+    font-size: 1.25em;
+}
+header .item > img{
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+header .item:hover{
+    outline: 3px solid var(--orange);
+}
+
+header .search-container{
+    margin-left: auto;
+    height: 80px;
+    width: 40%;
+    position: relative;
+}
+
+header .search-container input{
+    width: 100%;
+    height: 100%;
+    border-radius: 80px;
+    padding: 5px 10px 5px 70px;
+    font-size: 1em;
+    background: var(--light-green);
+    color: var(--green);
+    border: none;
+    outline: none;
+}
+header .search-container input::placeholder{
+    color: var(--green);
+}
+header .search-container input:focus{
+    color: var(--dark-green);
+}
+header .search-container i{
+    position: absolute;
+    left: 10px;
+    color: var(--dark-green);
+    height: 100%;
+    padding: 5px 0;
+    font-size: 1.25em;
+    display: flex;
+    align-items: center;
+}
+header .search-container i::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    border-right: 1px solid var(--white);
+    margin-left: 10px;
+}
+header .date-container{
+    height: 60px;
+    border-radius: 60px;
+    padding: 10px;
+    background: var(--light-green);
+    color: var(--black);
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 700;
+}
+.date-container .date-btn{
+    width: 5px;
+    height: 5px;
+    position: relative;
+    --btn-thikness: 2px;
+}
+.date-container .date-btn::before, .date-container .date-btn::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.date-container .date-btn.left::before, .date-container .date-btn.left::after{
+    border-bottom: var(--btn-thikness) solid var(--black);
+    border-left: var(--btn-thikness) solid var(--black);
+}
+.date-container .date-btn.right::before, .date-container .date-btn.right::after{
+    border-top: var(--btn-thikness) solid var(--black);
+    border-right: var(--btn-thikness) solid var(--black);
+}
+
+.date-container .date-btn::before, .date-container .date-btn::after{
+    transform: rotate(45deg);
+}
+.date-container .date-btn:hover::before,.date-container .date-btn:hover::after{
+    border-width: calc(var(--btn-thikness) + 1px);
+}
+.date-container .date-btn.left.double::after{
+    left: 5px;
+}
+.date-container .date-btn.right.double::before{
+    left: -5px;
+}
+
+
+@media screen and (max-width: 700px) {
+    header > div{
+        padding: 5px;
+        height: 40px;
+        font-size: 1.25em;
+        position: relative;
+    }
+    .user-help-btn {
+        display: block;
+    }
+    
+    .header-logo{
+        padding: inherit;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .page-list{
+        display: none;
+    }
+    header .profile{
+        width: 32px;
+        height: 32px;
+    }
+    header ul, header>div.secondary{
+        gap: 10px;
+    }
+    .option-list li:not(.settings, .profile, .signout){
+        display: none;
+    }
+    .option-list .profile{
+        order: -1;
+    }
+    header .item{
+        width: 32px;
+        height: 32px;
+        font-size: 0.75em;
+    }
+
+    header .search-container{
+        height: 30px;
+    }
+    
+    header .search-container input{
+        padding: 5px 5px 5px 40px;
+        font-size: 0.75em;
+    }
+    header .search-container i{
+        left: 5px;
+        font-size: 1em;
+    }
+    header .search-container i::after{
+        margin-left: 5px;
+    }
+    header .date-container{
+        height: 24px;
+        padding: 5px;
+        font-size: 0.5em;
+        gap: 5px;
+    }
+    .date-container .date-btn{
+        --btn-thikness: 1px;
+    }
+    .date-container .date-btn.left.double::after{
+        left: 2px;
+    }
+    .date-container .date-btn.right.double::before{
+        left: -2px;
+    }
+}
+@media screen and (max-width: 1450px) {   
+    .page-list{
+        display: none;
+    }
+}
+
