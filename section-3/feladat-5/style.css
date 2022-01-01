@@ -1,0 +1,204 @@
+:root{
+    --dark-green: #006633;
+    --green: #55AE3A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background: lightgray;
+    padding: 50px;
+}
+.post-container {
+    background: #fff;
+    display: flex;
+    float: left;
+    margin-right: 10px;
+}
+.post-container .post-image{
+    display: block;
+    object-fit: cover;
+}
+.post-container .content{
+    padding: 10px 10px 20px
+}
+.post-container .title{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+}
+.post-container .title h2{
+    width:100%;
+    text-transform: uppercase;
+}
+
+.footer{
+    width: 100%;
+    background: var(--dark-green);
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    gap: 20px;
+}
+
+.category{
+    width: fit-content;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    margin-left: 10px;
+}
+.category::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    transform: skew(-25deg);
+    z-index: -1;
+    background-color: #fff;
+}
+.category-icon {
+    font-size: 1rem;
+}
+
+.footer span{
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.footer span i{
+    margin-right: 5px;
+}
+
+.footer .date{
+    margin-left: auto;
+    font-weight: 700;
+}
+.profile-icon{
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* common */
+.post-container.medium .title h2, .post-container.wide .title h2,.post-container.medium .content p,.post-container.wide .content p{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-container.small .profile-icon, .post-container.wide .profile-icon {
+    align-self: flex-start;
+}
+
+/* medium */
+
+.post-container.medium{
+    width: 600px;
+    flex-direction: column;
+}
+.post-container.medium .post-image{
+    height: 310px;
+}
+.post-container.medium .category{
+    line-height: 38px;
+}
+.post-container.medium .footer span i{
+    font-size: 1.5rem;
+}
+.post-container.medium .category,.post-container.medium .footer .time, .post-container.medium .footer .date{
+    font-size: 1rem;
+}
+.post-container.medium .title h2{
+    -webkit-line-clamp: 2;
+    font-size: 1.75rem;
+}
+.post-container.medium .content p{
+    font-size: 1.25rem;
+    -webkit-line-clamp: 4;
+}
+.post-container.medium .profile-icon{
+    border: 2px solid var(--green);
+}
+
+/* small */
+
+.post-container.small{
+    width: 300px;
+    flex-direction: column;
+}
+.post-container.small .post-image{
+    height: 170px;
+}
+.post-container.small .category{
+    line-height: 24px;
+    margin-left: 5px;
+    padding: 0 10px;
+}
+.post-container.small .footer{
+    padding: 0 5px;
+}
+.post-container.small .footer span i{
+    font-size: 1rem;
+}
+.post-container.small .category,.post-container.small .footer .time, .post-container.small .footer .date{
+    font-size: 0.75rem;
+}
+.post-container.small .title h2{
+    font-size: 0.85rem;
+}
+.post-container.small .content p{
+    display: none;
+}
+
+/* wide */
+
+.post-container.wide{
+    width: 600px;
+    flex-direction: row;
+}
+.post-container.wide .post-image, .post-container.wide .wrapper{
+    width: 50%;
+}
+.post-container.wide .wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.post-container.wide .category{
+    line-height: 38px;
+    margin-left: 5px;
+    padding: 0 10px;
+}
+.post-container.wide .footer span i{
+    font-size: 1.5rem;
+}
+.post-container.wide .category,.post-container.wide .footer .time{
+    font-size: 1rem;
+}
+.post-container.wide .footer .date{
+    font-size: 0.75rem;
+}
+.post-container.wide .title h2{
+    -webkit-line-clamp: 2;
+    font-size: 1.5rem;
+}
+.post-container.wide .content p{
+    font-size: 1rem;
+    -webkit-line-clamp: 2;
+}
+.post-container.wide .footer{
+    padding: 0 5px;
+}
