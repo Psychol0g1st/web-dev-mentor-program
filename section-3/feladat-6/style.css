@@ -1,0 +1,411 @@
+:root{
+    --dark-green: #006633;
+    --green: #55AE3A;
+    --red: #EF3A43;
+    --yellow: #FFE600;
+    --orange: #DF7E24;
+    --white: #fff;
+    --black: #000;
+    --tr-1: #000;
+    --tr-2: #1A1A1A;
+    --tr-3: #1A7547;
+    --tr-4: #006633;
+    --tr-5: #4C9D34;
+    --tr-6: #55AE3A;
+    --tr-7: #E5E5E5;
+    --tr-8: #FFF;
+    --dark-gray: #7f7f7f;
+    --gray: #BFBFBF;
+    --light-green: #B1DDC4;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+footer .top-banner::before, footer .top-banner::after{
+    content: "";
+    width: 100%;
+    display: block;
+    background: url("./pattern-large-1.png");
+    background-repeat: repeat;
+    height: 87px;
+}
+footer .top-banner:after{
+    background: url("./pattern-large-2.png");
+}
+
+/* footer .top-banner #triangle-pattern{
+    display: hidden;
+}
+footer .top-banner .triangle:nth-child(2n - 1){
+    display: inline-block;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top-width: 78px;
+    border-top-style: solid;
+}
+footer .top-banner .triangle:nth-child(2n){
+    display: inline-block;
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom-width: 78px;
+    border-bottom-style: solid;
+}
+footer .top-banner .triangle:nth-child(1){ 
+    border-top-color: var(--tr-1); 
+}
+footer .top-banner .triangle:nth-child(2){
+    border-bottom-color: var(--tr-2);
+    transform: translateX(calc(-50% * 1 - 5px));
+}
+footer .top-banner .triangle:nth-child(3){
+    border-top-color: var(--tr-3);
+    transform: translateX(calc( (-50%  - 5px) * 2));
+}
+footer .top-banner .triangle:nth-child(4){ 
+    border-bottom-color: var(--tr-4);
+    transform: translateX(calc( (-50%  - 5px) * 3));
+}
+footer .top-banner .triangle:nth-child(5){ 
+    border-top-color: var(--tr-5);
+    transform: translateX(calc( (-50%  - 5px) * 4));
+}
+footer .top-banner .triangle:nth-child(6){ 
+    border-bottom-color: var(--tr-6);
+    transform: translateX(calc( (-50%  - 5px) * 5)); 
+}
+footer .top-banner .triangle:nth-child(7){ 
+    border-top-color: var(--tr-7);
+    transform: translateX(calc( (-50%  - 5px) * 6));
+}
+footer .top-banner .triangle:nth-child(8){ 
+    border-bottom-color: var(--tr-8);
+    transform: translateX(calc( (-50%  - 5px) * 7)); 
+}
+
+footer .top-banner{
+    background: -moz-element(#triangle-pattern) repeat;
+} */
+/* wrapper */
+
+footer .wrapper{
+    display: grid;
+    grid-template-columns: 2fr auto 1fr;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+/* links */
+
+footer .links{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2 auto);
+    font-size: 1.5rem;
+}
+footer .links h3{
+    font-size: 2rem;
+}
+footer .links .content{
+    grid-row: span 2;
+}
+
+footer .contact-list .icon{
+    width: 80px;
+    height: 80px;
+    background: var(--dark-green); 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    transition: background 0.5s;
+}
+footer .contact-list .icon:hover{
+    background: var(--orange)
+}
+footer .contact-list .icon i{
+    font-size: 2.75rem;
+}
+
+footer .links  a{
+    color: var(--black);
+    text-decoration: none;
+}
+footer .links div:not(.contact-list) a:hover{
+    text-decoration: underline;
+}
+footer .links ul{
+    list-style: none;
+    margin-left: 20px;
+}
+footer .links ul li{
+    margin-bottom: 5px;
+}
+footer .contact-list ul{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: left;
+    gap: 5px;
+}
+
+
+/* add */
+footer .add{
+    height: 360px;
+    width: 540px;
+}
+footer .add img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+/* newsletter */
+.newsletter{
+    width: 100%;
+    background-color: var(--dark-green);
+    color: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+.newsletter .title{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+.newsletter .title i{
+    margin-right: 10px;
+    font-size: 2.5rem;
+}
+.newsletter form > input{
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    font-size: 1.75rem;
+    border: 2px solid var(--green);
+    outline: none;
+    border-radius: 4px;
+}
+.newsletter form > input::placeholder{
+    color: #000;
+}
+.newsletter form input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+}
+.newsletter .checkbox-container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.newsletter .checkbox-container > label > span{
+    text-decoration: underline;
+    font-weight: bold;
+}
+.newsletter .submit-btn, .newsletter .submit-btn input{
+    width: 240px;
+    height: 50px;
+    border-radius: 25px;
+}
+.newsletter .submit-btn{
+    position: relative;
+    margin: 30px auto 0;
+    background: var(--green);
+    box-shadow: 0px 2px 4px #1E1E22;
+    transition: background 0.5s;
+}
+.newsletter .submit-btn:hover{
+    background: var(--orange);
+}
+.newsletter .submit-btn input{
+    position: absolute;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    padding-left: calc(1em + 5px);
+    padding-right: 10px;
+}
+.newsletter .submit-btn .bell-i{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    padding-left: 15px;
+}
+
+footer .bottom-banner{
+    background: var(--dark-green);
+    color: var(--white);
+    font-size: 2rem;
+    text-align: center;
+    padding: 10px;
+}
+footer .bottom-banner .terms a{
+    font-size: 2.5rem;
+    color: var(--white);
+    text-decoration: none;
+}
+footer .bottom-banner .terms{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    margin-bottom: 10px;
+}
+footer .bottom-banner .terms a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width:1560px) {
+    footer .links{
+        justify-items: center;
+    }
+    footer .bottom-banner{
+        font-size: 1.5rem;
+    }
+    footer .bottom-banner .terms a{
+        font-size: 2rem;
+    }
+    footer .wrapper{
+        display: grid;
+        grid-template-columns: unset;
+        grid-auto-flow: row;
+        align-items: center;
+        justify-items: center;
+        gap: 30px;
+        padding: 40px 100px;
+    }
+    .newsletter form > input{
+        border-radius: 25px;
+    }
+    footer .add{
+        height: 425px;
+        width: 100%;
+    }
+    footer .contact-list ul{
+        grid-template-columns: repeat(6, auto);
+    }
+    footer .contact-list{
+        grid-column: span 2;
+    }
+    footer .contact-list .icon{
+        width: 60px;
+        height: 60px;
+    }
+    footer .contact-list .icon i{
+        font-size: 2rem;
+    }
+    footer .top-banner::before, footer .top-banner::after{
+        background: url("./pattern-medium-1.png");
+        height: 46px;
+    }
+    footer .top-banner:after{
+        background: url("./pattern-medium-2.png");
+    }
+}
+@media screen and (max-width:576px) {
+    footer .links{
+        justify-items: center;
+    }
+    footer .bottom-banner, footer .bottom-banner .terms a{
+        font-size: 0.75rem;
+    }
+    footer .wrapper{
+        display: grid;
+        grid-template-columns: unset;
+        grid-auto-flow: row;
+        align-items: center;
+        justify-items: center;
+        gap: 30px;
+        padding: 20px 10px;
+    }
+    footer .links{
+        font-size: 0.75rem;
+    }
+    footer .links h3{
+        font-size: 1rem;
+    }
+    .newsletter form > input{
+        border-radius: 25px;
+    }
+    footer .add{
+        height: 88px;
+        width: 398px;
+    }
+    footer .contact-list ul{
+        grid-template-columns: repeat(6, auto);
+    }
+    footer .contact-list{
+        grid-column: span 2;
+    }
+    footer .contact-list .icon{
+        width: 40px;
+        height: 40px;
+    }
+    footer .contact-list .icon i{
+        font-size: 1.5rem;
+    }
+    footer .top-banner::before, footer .top-banner::after{
+        background: url("./pattern-small-1.png");
+        height: 19px;
+    }
+    footer .top-banner:after{
+        background: url("./pattern-small-2.png");
+    }
+
+
+    .newsletter{
+        padding: 20px;
+    }
+    .newsletter .title{
+        font-size: 1.25rem;
+    }
+    .newsletter .title i{
+        font-size: 2rem;
+    }
+    .newsletter form > input{
+        height: 30px;
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+    .newsletter .checkbox-container{
+        display: none;
+    }
+    .newsletter .submit-btn, .newsletter .submit-btn input{
+        width: 170px;
+        height: 40px;
+    }
+    .newsletter .submit-btn{
+        margin: 10px auto 0;
+    }
+    .newsletter .submit-btn input{
+        font-size: 1.25rem;
+        padding-left: calc(1.5rem + 5px);
+        padding-right: 10px;
+    }
+    .newsletter .submit-btn .bell-i{
+        font-size: 1.25rem;
+        padding-left: 15px;
+    }
+    
+}
