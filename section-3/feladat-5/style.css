@@ -16,47 +16,53 @@ body{
 .post-container {
     background: #fff;
     display: flex;
+    /* temporary */
     float: left;
     margin-right: 10px;
+    /*  */
 }
 .post-container .post-image{
     display: block;
     object-fit: cover;
 }
 .post-container .content{
-    padding: 10px 10px 20px
+    padding: 5px;
+}
+.post-container .content p{
+    text-align: justify;
 }
 .post-container .title{
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 .post-container .title h2{
     width:100%;
     text-transform: uppercase;
+    font-weight: 900;
 }
 
 .footer{
     width: 100%;
     background: var(--dark-green);
     display: flex;
-    padding: 0 10px;
+    padding: 0 8px;
     align-items: center;
-    gap: 20px;
+    gap: 2px;
 }
 
 .category{
     width: fit-content;
-    padding: 0 20px;
+    padding: 0 10px;
     position: relative;
     z-index: 1;
     display: flex;
-    gap: 10px;
+    gap: 5px;
     justify-content: center;
     align-items: center;
     font-weight: normal;
-    margin-left: 10px;
+    margin: 0 8px;
 }
 .category::before{
     content: "";
@@ -81,6 +87,9 @@ body{
     margin-right: 5px;
 }
 
+.footer .time{
+    font-weight: 500;
+}
 .footer .date{
     margin-left: auto;
     font-weight: 700;
@@ -106,7 +115,7 @@ body{
 /* medium */
 
 .post-container.medium{
-    width: 600px;
+    width: 615px;
     flex-direction: column;
 }
 .post-container.medium .post-image{
@@ -118,16 +127,22 @@ body{
 .post-container.medium .footer span i{
     font-size: 1.5rem;
 }
+.post-container.medium .footer{
+    margin-top: 15px;
+}
 .post-container.medium .category,.post-container.medium .footer .time, .post-container.medium .footer .date{
-    font-size: 1rem;
+    font-size: 16px;
 }
 .post-container.medium .title h2{
     -webkit-line-clamp: 2;
-    font-size: 1.75rem;
+    font-size: 30px;
+    line-height: 35px;
 }
 .post-container.medium .content p{
-    font-size: 1.25rem;
+    font-size: 22px;
+    line-height: 28px;
     -webkit-line-clamp: 4;
+    padding: 3px;
 }
 .post-container.medium .profile-icon{
     border: 2px solid var(--green);
@@ -144,20 +159,29 @@ body{
 }
 .post-container.small .category{
     line-height: 24px;
-    margin-left: 5px;
+    margin: 0 4px;
     padding: 0 10px;
 }
 .post-container.small .footer{
-    padding: 0 5px;
+    padding: 0 4px;
 }
 .post-container.small .footer span i{
-    font-size: 1rem;
+    font-size: 16px;
 }
 .post-container.small .category,.post-container.small .footer .time, .post-container.small .footer .date{
-    font-size: 0.75rem;
+    font-size: 12px;
 }
 .post-container.small .title h2{
-    font-size: 0.85rem;
+    font-size: 14px;
+    text-align: left;
+    padding: 5px 5px 0;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+}
+.post-container .content{
+    padding: 4px 8px 0;
 }
 .post-container.small .content p{
     display: none;
@@ -179,26 +203,31 @@ body{
 }
 .post-container.wide .category{
     line-height: 38px;
-    margin-left: 5px;
+    margin-left: 8px;
     padding: 0 10px;
 }
 .post-container.wide .footer span i{
-    font-size: 1.5rem;
+    font-size: 16px;
 }
 .post-container.wide .category,.post-container.wide .footer .time{
-    font-size: 1rem;
+    font-size: 16px;
 }
 .post-container.wide .footer .date{
-    font-size: 0.75rem;
+    font-size: 12px;
 }
 .post-container.wide .title h2{
+    line-height: 26px;
     -webkit-line-clamp: 2;
-    font-size: 1.5rem;
+    font-size: 22px;
+    padding-top: 5px;
+    margin-bottom: 5px;
 }
 .post-container.wide .content p{
-    font-size: 1rem;
+    font-size: 16px;
+    text-align: left;
+    line-height: 20px;
     -webkit-line-clamp: 2;
 }
-.post-container.wide .footer{
-    padding: 0 5px;
+.post-container .content{
+    padding: 5px 12px 20px 8px;
 }
