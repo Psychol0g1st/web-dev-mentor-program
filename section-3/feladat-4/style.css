@@ -18,54 +18,56 @@
 body{
     font-family: 'Roboto', sans-serif;
     background: var(--gray);
+    position: relative;
 }
 
 .profile-container{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background: var(--white);
-    display: grid;
-    grid-auto-flow: row;
-    align-items: center;
-    justify-items: center;
-    gap: 20px;
-    padding: 10px;
-}
-
-.profile-image{
-    display: block;
-    width: 265px;
-    height: 265px;
-    border-radius: 50%;
-}
-
-.profile-container .name{
-    font-size: 1.75rem;
-    font-weight: 700;
-}
-.description{
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 12px 8px;
 }
+
+.profile-image-container{
+    width: 266px;
+    height: 266px;
+    margin-bottom: 5px;
+    flex-shrink: 0;
+}
+.profile-image{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile-container .name{
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
 .description .personal-data{
     width: inherit;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-
+    margin-bottom: 10px;
 }
 .description .personal-data p{
-    font-size: 1.25rem;
+    font-size: 20px;
     display: flex;
     align-items: center;
+    margin-right: 45px;
+    margin-bottom: 5px;
 }
 .description.text p{
     text-align: justify;
-    font-size: 1.15rem;
+    font-size: 18px;
+    margin-bottom: 13px;
+    line-height: 21px;
 } 
 
 .data-icon{
@@ -84,25 +86,32 @@ body{
 
 .data-icon.ontop{
     position: absolute;
-    top: 10px;
+    top: 12px;
 }
 .data-icon.ontop:nth-child(1){
-    left: 10px;
+    left: 16px;
 }
 .data-icon.ontop:nth-child(2){
-    right: 10px;
+    right: 16px;
 }
-
+.follow-btn-container{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.description .follow-btn-container{
+    display: none;
+}
 .follow-btn{
+    font-family: 'Work Sans', sans-serif;
     border: none;
     outline: none;
     background: var(--dark-green);
     color: var(--white);
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 700;
     padding: 16px 32px;
-    border-radius: 50px;
+    border-radius: 44px;
     transition: background 0.5s;
 }
 .follow-btn:hover{
@@ -123,64 +132,77 @@ body{
 }
 
 .contact-list a{
+    width: fit-content;
     color: var(--black);
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;
 }
+.contact-list a:hover .icon{
+    background: var(--orange);
+}
 .contact-list a span:nth-child(2){
     display: none;
+}
+.contact-list a:hover span:nth-child(2){
+    text-decoration: underline;
 }
 .contact-list{
     display: grid;
     grid-auto-flow: column;
     align-items: center;
     justify-items: center;
-    grid-gap: 10px;
+    grid-gap: 4px;
     list-style: none;
 }
 
 @media screen and (min-width:1160px) {
-    
-
-    .profile-image{
-        grid-area: image;
-    }
-    .description.person{
-        grid-area: person;
-        gap: 10px;
-    }
-    .description.text{
-        grid-area: text;
-    }
-    .follow-btn{
-        grid-area: btn;
-    }
-    .personal-data{
-        flex-direction: column;
-        width: fit-content;
-    }
-    .contact-list{
-        grid-area: contactlist;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-gap: 10px;
-        justify-items: stretch;
-        width: 100%;
-    }
-    .contact-list a span:nth-child(2){
-        display: inline-block;
-    }
     .profile-container{
-        grid-template-areas: 
-        "image person text"
-        "image person contactlist"
-        "image btn contactlist";
-        column-gap: 50px;
-        row-gap: 5px;
+        flex-direction: row;
+        gap: 20px;
+        padding: 8px;
+    }
+    .profile-image-container{
+        margin: 0;
+        width: 256px;
+        height: 256px;
     }
     .data-icon.ontop{
         display: none;
+    }
+    .contact-list{
+        grid-auto-flow: unset;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: left;
+        grid-gap: 4px;
+        list-style: none;
+    }
+    .description .follow-btn-container{
+        display: block;
+        margin-bottom: 0;
+    }
+    .description-text-contact-lis-container .follow-btn-container{
+        display: none;
+    }
+    .description.person{
+        padding-top: 8px;
+    }
+    .profile-container .name, .description .personal-data{
+        margin-bottom: 20px;
+    }
+    .description.text p{
+        margin-bottom: 10px;
+    }
+    .description .personal-data p{
+        margin-bottom: 10px;
+    }
+    .description-text-contact-lis-container{
+        align-self: start;
+        margin-top: 5px;
+        padding-left: 8px;
+    }
+    .contact-list a span:nth-child(2){
+        display: inline;
     }
 }
