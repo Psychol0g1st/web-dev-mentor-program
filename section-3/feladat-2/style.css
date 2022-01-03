@@ -216,7 +216,7 @@ header .date-container{
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
     header > div{
         padding: 5px;
         height: 40px;
@@ -238,11 +238,11 @@ header .date-container{
         display: none;
     }
     header .profile{
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        height: 24px;
     }
     header ul, header>div.secondary{
-        gap: 10px;
+        gap: 5px;
     }
     .option-list li:not(.settings, .profile, .signout){
         display: none;
@@ -251,8 +251,9 @@ header .date-container{
         order: -1;
     }
     header .item{
-        width: 32px;
-        height: 32px;
+        width: 24px;
+        height: 24px;
+        padding: 2px;
         font-size: 0.75em;
     }
 
@@ -275,7 +276,7 @@ header .date-container{
         height: 24px;
         padding: 5px;
         font-size: 0.5em;
-        gap: 5px;
+        gap: 2px;
     }
     .date-container .date-btn{
         --btn-thikness: 1px;
@@ -287,7 +288,7 @@ header .date-container{
         left: -2px;
     }
 }
-@media screen and (max-width: 1450px) {   
+@media screen and (max-width: 1512px) {   
     .page-list{
         display: none;
     }
