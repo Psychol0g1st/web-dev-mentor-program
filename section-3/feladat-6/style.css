@@ -100,11 +100,13 @@ footer .links ul li{
 }
 footer .contact-list ul{
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(5, auto);
     justify-content: left;
-    gap: 5px;
+    gap: 8px;
 }
-
+footer .contact-list{
+    grid-column: span 2;
+}
 
 /* add */
 footer .add{
@@ -261,12 +263,6 @@ footer .bottom-banner .terms a:hover{
         height: 425px;
         width: 100%;
     }
-    footer .contact-list ul{
-        grid-template-columns: repeat(6, auto);
-    }
-    footer .contact-list{
-        grid-column: span 2;
-    }
     footer .contact-list .icon{
         width: 60px;
         height: 60px;
@@ -315,11 +311,7 @@ footer .bottom-banner .terms a:hover{
     footer .contact-list h3{
         text-align: center;
     }
-    footer .contact-list ul{
-        grid-template-columns: repeat(6, auto);
-    }
     footer .contact-list{
-        grid-column: span 2;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
