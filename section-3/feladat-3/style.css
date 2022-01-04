@@ -30,38 +30,38 @@ body{
     gap: 15px;
     color: var(--dark-green);
 }
-.person{
+.profile-container .person{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 5px;
 }
-.person > img{
+.profile-container .person > img{
     display: block;
     width: 234px;
     height: 234px;
     border-radius: 50%;
     border: 10px solid var(--dark-green);
 }
-.person .name-container{
+.profile-container .person .name-container{
     margin-top: 10px;
     text-align: center;
     line-height: 1;
 }
-.person .name{
+.profile-container .person .name{
     font-size: 40px;
     font-weight: 700;
 }
-.person .short-name{
+.profile-container .person .short-name{
     font-size: 32px;
 }
 
-.header{
+.profile-container .header{
     background: var(--dark-green);
     color: var(--black);
     padding: 0 15px;
 }
-.header-title{
+.profile-container .header-title{
     margin: 0 auto;
     width: fit-content;
     padding: 0 15px;
@@ -76,7 +76,7 @@ body{
     font-weight: 900;
     text-transform: uppercase;
 }
-.header-title::before{
+.profile-container .header-title::before{
     content: "";
     position: absolute;
     width: 100%;
@@ -86,10 +86,10 @@ body{
     z-index: -1;
     background-color: #fff;
 }
-.description .content{
+.profile-container .description .content{
     padding: 5px 0;
 }
-.description .content p{
+.profile-container .description .content p{
     margin-bottom: 5px;
     font-size: 24px;
     line-height: 1;
@@ -97,20 +97,20 @@ body{
     align-items: center;
     justify-content: center;
 }
-.description .content i{
+.profile-container .description .content i{
     margin-right: 5px;
     transform: translate(-8px);
     font-size: 20px;
 }
-.description.text .content p{
+.profile-container .description.text .content p{
     text-align: justify;
 }
-.description.tags .content{
+.profile-container .description.tags .content{
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
 }
-.description .content .tag{
+.profile-container .description .content .tag{
     display: inline-block;
     padding: 4px 16px;
     border-radius: 30px;
@@ -122,6 +122,6 @@ body{
     display: flex;
     align-items: center;
 }
-.description .content .tag:hover{
+.profile-container .description .content .tag:hover{
     background: var(--orange);
 }
