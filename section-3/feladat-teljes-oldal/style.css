@@ -1,3 +1,14 @@
+
+/*  header..............: 22
+    main................: 219
+    main profile........: 219
+    header white rhombus: 274
+    main posts..........: 346
+    main sidebar..........: 603
+    main footer..........: 660
+    Media Querrys..........: 862
+*/
+
 :root{
     --dark-green: #006633;
     --green: #55AE3A;
@@ -211,101 +222,26 @@ header .date-container .date-btn.left.double::after{
 header .date-container .date-btn.right.double::before{
     left: -5px;
 }
-@media screen and (max-width: 900px) {
-    header > div{
-        padding: 5px;
-        height: 40px;
-        font-size: 1.25em;
-        position: relative;
-    }
-    header .user-help-btn {
-        display: block;
-    }
-    
-    header.header-logo{
-        padding: inherit;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-    header .page-list{
-        display: none;
-    }
-    header .profile{
-        width: 24px;
-        height: 24px;
-    }
-    header ul, header>div.secondary{
-        gap: 5px;
-    }
-    header .option-list li:not(.settings, .profile, .signout){
-        display: none;
-    }
-    header .option-list .profile{
-        order: -1;
-    }
-    header .item{
-        width: 24px;
-        height: 24px;
-        padding: 2px;
-        font-size: 0.75em;
-    }
 
-    header .search-container{
-        height: 30px;
-    }
-    
-    header .search-container input{
-        padding: 5px 5px 5px 40px;
-        font-size: 0.75em;
-    }
-    header .search-container i{
-        left: 5px;
-        font-size: 1em;
-    }
-    header .search-container i::after{
-        margin-left: 5px;
-    }
-    header .date-container{
-        height: 24px;
-        padding: 5px;
-        font-size: 0.5em;
-        gap: 2px;
-    }
-    header .date-container .date-btn{
-        --btn-thikness: 1px;
-    }
-    header .date-container .date-btn.left.double::after{
-        left: 2px;
-    }
-    header .date-container .date-btn.right.double::before{
-        left: -2px;
-    }
-}
-@media screen and (max-width: 1512px) {   
-    header .page-list{
-        display: none;
-    }
-}
 
 /* main */
 
 main{
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    gap: 30px;
+    display: grid;
+    grid-template-areas: "profile posts sidebar";
+    grid-template-columns: auto min-content min-content;
+    column-gap: 30px;
     padding: 16px 50px 29px;
 }
 
 /* main profile */
 main .profile-wrapper{
-    flex-grow: 1;
+    grid-area: profile;
 }
 main .profile-wrapper .profile-container{
     margin: auto;
-    width: 456px;
+    max-width: 456px;
+    min-width: 300px;
     background: var(--white);
     display: flex;
     flex-direction: column;
@@ -313,31 +249,33 @@ main .profile-wrapper .profile-container{
     padding-top: 8px;
     color: var(--dark-green);
 }
-.profile-container .person{
+main .profile-container .person{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 5px;
 }
-.profile-container .person > img{
+main .profile-container .person > img{
     display: block;
     width: 234px;
     height: 234px;
     border-radius: 50%;
     border: 10px solid var(--dark-green);
 }
-.profile-container .person .name-container{
+main .profile-container .person .name-container{
     margin-top: 10px;
     text-align: center;
     line-height: 1;
 }
-.profile-container .person .name{
+main .profile-container .person .name{
     font-size: 40px;
     font-weight: 700;
 }
-.profile-container .person .short-name{
+main .profile-container .person .short-name{
     font-size: 32px;
 }
+
+/* box green header with white romb */
 
 .header{
     background: var(--dark-green);
@@ -410,43 +348,47 @@ main .profile-wrapper .profile-container{
 }
 
 /*main posts */
-
-.posts .post-group-title .header-title{
+main .posts{
+    grid-area: posts;
+}
+main .posts .post-group-title .header-title{
     line-height: 57px;
     font-size: 32px;
 }
-.posts .post-group-title .header-title i{
+main .posts .post-group-title .header-title i{
     font-size: 24px;
 }
 
 
-.post-container {
+main .posts .post-container {
     background: #fff;
     display: flex;
 }
-.post-container .post-image{
+main .posts .post-container .post-image img{
     display: block;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
 }
-.post-container .content{
+main .posts .post-container .content{
     padding: 5px;
 }
-.post-container .content p{
+main .posts .post-container .content p{
     text-align: justify;
 }
-.post-container .title{
+main .posts .post-container .title{
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     gap: 5px;
 }
-.post-container .title h2{
+main .posts .post-container .title h2{
     width:100%;
     text-transform: uppercase;
     font-weight: 900;
 }
 
-.footer{
+main .posts .post-container .footer{
     width: 100%;
     background: var(--dark-green);
     display: flex;
@@ -455,7 +397,7 @@ main .profile-wrapper .profile-container{
     gap: 2px;
 }
 
-.category{
+main .posts .post-container .category{
     width: fit-content;
     padding: 0 10px;
     position: relative;
@@ -467,7 +409,7 @@ main .profile-wrapper .profile-container{
     font-weight: normal;
     margin: 0 8px;
 }
-.category::before{
+main .posts .post-container .category::before{
     content: "";
     position: absolute;
     width: 100%;
@@ -477,27 +419,27 @@ main .profile-wrapper .profile-container{
     z-index: -1;
     background-color: #fff;
 }
-.category-icon {
+main .posts .post-container .category-icon {
     font-size: 1rem;
 }
 
-.footer span{
+main .posts .post-container .footer span{
     color: #fff;
     display: flex;
     align-items: center;
 }
-.footer span i{
+main .posts .post-container .footer span i{
     margin-right: 5px;
 }
 
-.footer .time{
+main .posts .post-container .footer .time{
     font-weight: 500;
 }
-.footer .date{
+main .posts .post-container .footer .date{
     margin-left: auto;
     font-weight: 700;
 }
-.profile-icon{
+main .posts .post-container .profile-icon{
     display: block;
     width: 40px;
     height: 40px;
@@ -505,180 +447,175 @@ main .profile-wrapper .profile-container{
 }
 
 /* common */
-.post-container.medium .title h2, .post-container.wide .title h2,.post-container.medium .content p,.post-container.wide .content p{
+main .posts .post-container.medium .title h2, .post-container.wide .title h2,.post-container.medium .content p,.post-container.wide .content p{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.post-container.small .profile-icon, .post-container.wide .profile-icon {
+main .posts .post-container.small .profile-icon, .post-container.wide .profile-icon {
     align-self: flex-start;
 }
 
 /* medium */
 
-.post-container.medium{
+main .posts .post-container.medium{
     width: 615px;
     flex-direction: column;
 }
-.post-container.medium .post-image{
+main .posts .post-container.medium .post-image{
     height: 310px;
 }
-.post-container.medium .category{
+main .posts .post-container.medium .category{
     line-height: 39px;
 }
-.post-container.medium .footer span i{
+main .posts .post-container.medium .footer span i{
     font-size: 1.5rem;
 }
-.post-container.medium .footer{
+main .posts .post-container.medium .footer{
     margin-top: 15px;
 }
-.post-container.medium .category,.post-container.medium .footer .time, .post-container.medium .footer .date{
+main .posts .post-container.medium .category,.post-container.medium .footer .time, .post-container.medium .footer .date{
     font-size: 16px;
 }
-.post-container.medium .title h2{
+main .posts .post-container.medium .title h2{
     -webkit-line-clamp: 2;
     font-size: 30px;
     line-height: 35px;
 }
-.post-container.medium .content p{
+main .posts .post-container.medium .content p{
     font-size: 22px;
     line-height: 28px;
     -webkit-line-clamp: 4;
     padding: 5px;
 }
-.post-container.medium .profile-icon{
+main .posts .post-container.medium .profile-icon{
     border: 2px solid var(--green);
 }
 
 /* small */
 
-.post-container.small{
+main .posts .post-container.small{
     width: 300px;
     flex-direction: column;
 }
-.post-container.small .post-image{
+main .posts .post-container.small .post-image{
     height: 170px;
 }
-.post-container.small .category{
+main .posts .post-container.small .category{
     line-height: 24px;
     margin: 0 4px;
     padding: 0 10px;
 }
-.post-container.small .footer{
+main .posts .post-container.small .footer{
     padding: 0 4px;
 }
-.post-container.small .footer span i{
+main .posts .post-container.small .footer span i{
     font-size: 16px;
 }
-.post-container.small .category,.post-container.small .footer .time, .post-container.small .footer .date{
+main .posts .post-container.small .category,.post-container.small .footer .time, .post-container.small .footer .date{
     font-size: 12px;
 }
-.post-container.small .title h2{
+main .posts .post-container.small .title h2{
     font-size: 14px;
     text-align: left;
     padding-top: 5px;
 }
-.post-container.small .content{
+main .posts .post-container.small .content{
     padding: 4px 8px 5px;
 }
-.post-container.small .content p{
+main .posts .post-container.small .content p{
     display: none;
     line-height: 14px;
 }
 
 /* wide */
 
-.post-container.wide{
+main .posts .post-container.wide{
     width: 600px;
+    height: fit-content;
     flex-direction: row;
 }
-.post-container.wide .post-image, .post-container.wide .wrapper{
+main .posts .post-container.wide .post-image, .post-container.wide .wrapper{
     width: 50%;
 }
-.post-container.wide .wrapper{
+main .posts .post-container.wide .wrapper{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.post-container.wide .category{
+main .posts .post-container.wide .category{
     line-height: 40px;
     margin-left: 8px;
     padding: 0 10px;
 }
-.post-container.wide .footer span i{
+main .posts .post-container.wide .footer span i{
     font-size: 16px;
 }
-.post-container.wide .category,.post-container.wide .footer .time{
+main .posts .post-container.wide .category,.post-container.wide .footer .time{
     font-size: 16px;
 }
-.post-container.wide .footer .date{
+main .posts .post-container.wide .footer .date{
     font-size: 12px;
 }
-.post-container.wide .title h2{
+main .posts .post-container.wide .title h2{
     line-height: 26px;
     -webkit-line-clamp: 2;
     font-size: 22px;
     padding-top: 5px;
     margin-bottom: 5px;
 }
-.post-container.wide .content p{
+main .posts .post-container.wide .content p{
     padding-top: 10px;
     font-size: 16px;
     text-align: left;
     line-height: 20px;
     -webkit-line-clamp: 2;
 }
-.post-container.wide .content{
+main .posts .post-container.wide .content{
     padding: 5px 12px 20px 8px;
 }
 
 
-.posts .tiles{
+main .posts .tiles{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 18px;
     justify-content: space-between;
     row-gap: 15px;
     margin: 4px 0 16px;
+    grid-auto-flow: dense;
 }
 
-.posts .tiles .medium{
+
+main .posts .tiles .medium{
     grid-column: span 2;
     grid-row: span 2;
 }
-
-.posts .tiles .wide-tiles-container{
+main .posts .tiles .wide{
     grid-column: span 2;
+    grid-row: span 2;
 }
-.posts .tiles .wide-tiles-container, .posts .tiles .wide-tiles-container ~ div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+main .posts .last-watched .tiles{
+    grid-template-rows: repeat(6, min-content);
 }
-@media screen and (max-width:1620px) {
-    .posts .tiles{
-        grid-template-columns: repeat(2, 1fr);
-    }
+main .posts .last-watched .tiles .small{
+    grid-row: span 3;
 }
-@media screen and (max-width:1315px){
-    main{
-        gap: 10px;
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-}
-
-
-
 
 /*main sidebar */
 
 main .sidebar{
+    grid-area: sidebar;
     width: 80px;
-    position: relative;
+    height: 100vh;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    display: flex;
+    flex-direction: column;
 }
+
 
 main .sidebar .vertical-toggle > a, main .sidebar .options-group-container > a:not(.vertical-toggle){
     width: 80px;
@@ -692,7 +629,6 @@ main .sidebar .vertical-toggle > a, main .sidebar .options-group-container > a:n
     border-radius: 50%;
     text-decoration: none;
     transition: background 0.5s;
-
 }
 main .sidebar .vertical-toggle > a:hover, main .sidebar .options-group-container > a:not(.vertical-toggle):hover{
     background: var(--orange);
@@ -707,22 +643,22 @@ main .sidebar .vertical-toggle{
 main .sidebar .vertical-toggle .active{
     background: var(--green);
 }
-
 main .sidebar .options-group-container:nth-child(1), main .sidebar .vertical-toggle{
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-main .sidebar .options-group-container{
-    position: absolute;
-}
 main .sidebar .options-group-container:nth-child(2){
-    top:50%;
-    transform: translateY(-50%);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 main .sidebar .options-group-container:nth-child(1){
-    top:8px;
+    padding-top:8px;
 }
+
+/* footer */
 
 footer .top-banner::before, footer .top-banner::after{
     content: "";
@@ -736,7 +672,7 @@ footer .top-banner:after{
     background: url("./assets/pattern-large-2.png");
 }
 
-/* wrapper */
+/*footer wrapper */
 
 footer .wrapper{
     display: grid;
@@ -746,7 +682,7 @@ footer .wrapper{
     padding: 85px 20px 40px;
 }
 
-/* links */
+/*footer links */
 
 footer .links{
     display: grid;
@@ -805,7 +741,7 @@ footer .contact-list{
     grid-column: span 2;
 }
 
-/* add */
+/*footer add */
 footer .add{
     height: 360px;
     width: 640px;
@@ -817,8 +753,8 @@ footer .add img{
 }
 
 
-/* newsletter */
-.newsletter{
+/* footer newsletter */
+footer .newsletter{
     width: 100%;
     background-color: var(--dark-green);
     color: #fff;
@@ -829,17 +765,17 @@ footer .add img{
     flex-direction: column;
     justify-content: center;
 }
-.newsletter .title{
+footer .newsletter .title{
     font-size: 2rem;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
-.newsletter .title i{
+footer .newsletter .title i{
     margin-right: 10px;
     font-size: 2.5rem;
 }
-.newsletter form > input{
+footer .newsletter form > input{
     display: block;
     width: 100%;
     height: 50px;
@@ -849,28 +785,28 @@ footer .add img{
     outline: none;
     border-radius: 4px;
 }
-.newsletter form > input:first-child{
+footer .newsletter form > input:first-child{
     margin-bottom: 20px;
 }
-.newsletter form > input::placeholder{
+footer .newsletter form > input::placeholder{
     color: #000;
 }
-.newsletter form input[type="checkbox"]{
+footer .newsletter form input[type="checkbox"]{
     width: 18px;
     height: 18px;
 }
-.newsletter .checkbox-container{
+footer .newsletter .checkbox-container{
     margin-top: 10px;
     display: flex;
     align-items: center;
     gap: 5px;
 }
-.newsletter .checkbox-container > label > span{
+footer .newsletter .checkbox-container > label > span{
     text-decoration: underline;
     font-weight: bold;
     font-size: 14px;
 }
-.newsletter .submit-btn input{
+footer .newsletter .submit-btn input{
     border: none;
     outline: none;
     font-size: 31px;
@@ -882,7 +818,7 @@ footer .add img{
     line-height: 48px;
     background: transparent;
 }
-.newsletter .submit-btn{
+footer .newsletter .submit-btn{
     width: fit-content;
     position: relative;
     margin: 30px auto 0;
@@ -891,10 +827,10 @@ footer .add img{
     background: var(--green);
     transition: background 0.5s;
 }
-.newsletter .submit-btn:hover{
+footer .newsletter .submit-btn:hover{
     background: var(--orange);
 }
-.newsletter .submit-btn .bell-i{
+footer .newsletter .submit-btn .bell-i{
     position: absolute;
     top:50%;
     transform: translateY(-50%);
@@ -924,6 +860,7 @@ footer .bottom-banner .terms a:hover{
     text-decoration: underline;
 }
 
+/* media querrys */
 @media screen and (max-width:1800px) {
     footer .links{
         width: 100%;
@@ -950,10 +887,10 @@ footer .bottom-banner .terms a:hover{
         padding: 45px 10% 20px;
     }
     
-    .newsletter form > input{
+    footer .newsletter form > input{
         border-radius: 25px;
     }
-    .newsletter .checkbox-container{
+    footer .newsletter .checkbox-container{
         margin-top: 10px;
     }
     footer .add{
@@ -975,7 +912,183 @@ footer .bottom-banner .terms a:hover{
         background: url("./assets/pattern-medium-2.png");
     }
 }
+@media screen and (max-width:1620px) {
+    main .posts .tiles{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+@media screen and (max-width: 1512px) {   
+    header .page-list{
+        display: none;
+    }
+}
+@media screen and (max-width:1315px){
+    main{
+        gap: 10px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+@media screen and (max-width:1210px){
+    /* .posts .tiles{
+        grid-template-columns: 1fr;
+    } */
+    main{
+        grid-template-areas: 
+        "profile"
+        "posts"
+        "sidebar";
+        justify-content: center;
+        grid-template-columns: min-content;
+    }
+    main .sidebar{
+        height: 80px;
+        width: 100%;
+        bottom: 0;
+        flex-direction: row;
+        background: var(--white);
+    }
+    main .sidebar .settings-option{
+        margin-bottom: 0;
+        margin-right: 24px;
+    }
+   
+    main .sidebar .options-group-container:nth-child(1), main .sidebar .vertical-toggle{
+        flex-direction: row;
+    }
+    main .sidebar .options-group-container:nth-child(2){
+        flex-direction: row;
+        justify-content: right;
+    }
+    main .sidebar .options-group-container:nth-child(1){
+        padding-top:0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    
+    header > div{
+        padding: 5px;
+        height: 40px;
+        font-size: 1.25em;
+        position: relative;
+    }
+    header .user-help-btn {
+        display: block;
+    }
+    
+    header.header-logo{
+        padding: inherit;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    header .page-list{
+        display: none;
+    }
+    header .profile{
+        width: 24px;
+        height: 24px;
+    }
+    header ul, header>div.secondary{
+        gap: 5px;
+    }
+    header .option-list li:not(.settings, .profile, .signout){
+        display: none;
+    }
+    header .option-list .profile{
+        order: -1;
+    }
+    header .item{
+        width: 24px;
+        height: 24px;
+        padding: 2px;
+        font-size: 0.75em;
+    }
+
+    header .search-container{
+        height: 30px;
+    }
+    
+    header .search-container input{
+        padding: 5px 5px 5px 40px;
+        font-size: 0.75em;
+    }
+    header .search-container i{
+        left: 5px;
+        font-size: 1em;
+    }
+    header .search-container i::after{
+        margin-left: 5px;
+    }
+    header .date-container{
+        height: 24px;
+        padding: 5px;
+        font-size: 0.5em;
+        gap: 2px;
+    }
+    header .date-container .date-btn{
+        --btn-thikness: 1px;
+    }
+    header .date-container .date-btn.left.double::after{
+        left: 2px;
+    }
+    header .date-container .date-btn.right.double::before{
+        left: -2px;
+    }
+    main .sidebar{
+        padding-top: 10px;
+        height: 50px;
+    }
+    main .sidebar .vertical-toggle > a, main .sidebar .options-group-container > a:not(.vertical-toggle){
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}
 @media screen and (max-width:700px) {
+   
+    main .profile-container .person > img{
+        width: 180px;
+        height: 180px;
+        border-width: 5px;
+    }
+    main .profile-container .person .name{
+        font-size: 20px;
+    }
+    main .profile-container .person .short-name{
+        font-size: 16px;
+    }
+    main .header .header-title{
+        line-height: 20px;
+        font-size: 16px;
+    }
+    main .profile-container .description .content p{
+        font-size: 14px;
+    }
+    main .profile-container .description .content i{
+        font-size: 12px;
+    }
+
+    main .profile-container .description .content .tag{
+        border-radius: 30px;
+        font-size: 14px;
+    }
+    main .posts .post-group-title .header-title{
+        line-height: 20px;
+        font-size: 18px;
+        text-align: center;
+    }
+    main .posts .post-group-title .header-title i{
+        font-size: 16px;
+    }
+    
+    main .posts .tiles{
+        grid-template-columns: 1fr;
+    }
+
     footer .links{
         justify-items: center;
         justify-content: space-around;
@@ -998,12 +1111,12 @@ footer .bottom-banner .terms a:hover{
     footer .links h3{
         font-size: 1rem;
     }
-    .newsletter form > input{
+    footer .newsletter form > input{
         border-radius: 25px;
     }
     footer .add{
         height: 88px;
-        width: 398px;
+        width: 100%;
     }
     footer .contact-list h3{
         text-align: center;
@@ -1029,41 +1142,41 @@ footer .bottom-banner .terms a:hover{
     }
 
 
-    .newsletter{
+    footer .newsletter{
         padding: 8px 20px;
         height: fit-content;
     }
-    .newsletter .title{
+    footer .newsletter .title{
         font-size: 20px;
         margin-bottom: 8px;
     }
-    .newsletter .title i{
+    footer .newsletter .title i{
         font-size: 2rem;
     }
-    .newsletter form > input:first-child{
+    footer .newsletter form > input:first-child{
         margin-bottom: 8px;
     }
-    .newsletter form > input{
+    footer .newsletter form > input{
         height: 30px;
         font-size: 14px;
         margin-bottom: 8px;
     }
-    .newsletter .checkbox-container{
+    footer .newsletter .checkbox-container{
         display: none;
     }
-    .newsletter .submit-btn input{
+    footer .newsletter .submit-btn input{
         line-height: 40px;
     }
-    .newsletter .submit-btn{
+    footer .newsletter .submit-btn{
         width: fit-content;
         margin: 10px auto 0;
     }
-    .newsletter .submit-btn input{
+    footer .newsletter .submit-btn input{
         font-size: 1.25rem;
         padding-left: calc(1.5rem + 15px);
         padding-right: 15px;
     }
-    .newsletter .submit-btn .bell-i{
+    footer .newsletter .submit-btn .bell-i{
         font-size: 1.25rem;
         padding-left: 15px;
     }
@@ -1078,6 +1191,5 @@ footer .bottom-banner .terms a:hover{
     footer .bottom-banner{
         padding: 10px auto 15px;
     }
-    
 }
 
