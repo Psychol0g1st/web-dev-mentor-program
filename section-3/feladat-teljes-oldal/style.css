@@ -72,12 +72,15 @@ header ul{
     align-items: center;
     gap: 30px;
 }
-header .option-list{
-    margin-left: auto;
+header .page-list{
+    white-space: nowrap;
+    overflow:hidden;
 }
-
 header .page-list i{
     margin-right: 10px;
+}
+header .option-list{
+    margin-left: auto;
 }
 
 header .page-list a:hover{
@@ -240,7 +243,7 @@ main .profile-wrapper{
 }
 main .profile-wrapper .profile-container{
     margin: auto;
-    max-width: 456px;
+    max-width: 1000px;
     min-width: 300px;
     background: var(--white);
     display: flex;
@@ -275,7 +278,7 @@ main .profile-container .person .short-name{
     font-size: 32px;
 }
 
-/* box green header with white romb */
+/* box green header with white rhombus */
 
 .header{
     background: var(--dark-green);
@@ -363,6 +366,7 @@ main .posts .post-group-title .header-title i{
 main .posts .post-container {
     background: #fff;
     display: flex;
+    margin: auto;
 }
 main .posts .post-container .post-image img{
     display: block;
@@ -583,7 +587,7 @@ main .posts .tiles{
     column-gap: 18px;
     justify-content: space-between;
     row-gap: 15px;
-    margin: 4px 0 16px;
+    margin: 4px auto 16px;
     grid-auto-flow: dense;
 }
 
@@ -924,11 +928,96 @@ footer .bottom-banner .terms a:hover{
     }
 }
 @media screen and (max-width:1315px){
+    header .page-list{
+        display: flex;
+    }
     main{
         gap: 10px;
         padding-right: 20px;
         padding-left: 20px;
     }
+    header > div{
+        padding: 5px;
+        height: 50px;
+        font-size: 26px;
+        position: relative;
+        gap: 10px;
+    }
+    header .user-help-btn {
+        display: block;
+    }
+    header ul{
+        gap: 10px;
+    }
+    header .page-list{
+        font-size: 20px;
+    }
+    header .page-list i{
+        margin-right: 5px;
+        font-size: 18px;
+    }
+    
+    header .page-list a:hover{
+        border-bottom: 1px solid var(--white);
+    }
+    header .profile{
+        width: 40px;
+        height: 40px;
+    }
+    header ul, header>div.secondary{
+        gap: 10px;
+    }
+    
+    header .option-list .profile{
+        order: -1;
+    }
+    header .item{
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        font-size: 24px;
+    }
+
+    header .search-container{
+        height: 40px;
+    }
+    
+    header .search-container input{
+        padding: 5px 5px 5px 55px;
+        font-size: 20px;
+    }
+    header .search-container i{
+        left: 5px;
+        font-size: 24px;
+    }
+    header .search-container i::after{
+        margin-left: 10px;
+    }
+    header .date-container{
+        height: 30px;
+        padding: 5px 10px;
+        font-size: 18px;
+        gap: 10px;
+    }
+    header .date-container .date-btn{
+        --btn-thikness: 2px;
+    }
+    header .date-container .date-btn.left.double::after{
+        left: 5px;
+    }
+    header .date-container .date-btn.right.double::before{
+        left: -5px;
+    }
+    main .sidebar{
+        padding-top: 10px;
+        width: 60px;
+    }
+    main .sidebar .vertical-toggle > a, main .sidebar .options-group-container > a:not(.vertical-toggle){
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+
 }
 @media screen and (max-width:1210px){
     /* .posts .tiles{
@@ -936,38 +1025,45 @@ footer .bottom-banner .terms a:hover{
     } */
     main{
         grid-template-areas: 
-        "profile"
-        "posts"
-        "sidebar";
+        "profile sidebar"
+        "posts sidebar";
         justify-content: center;
-        grid-template-columns: min-content;
+        grid-template-columns: auto min-content;
+        padding: 0 10px;
     }
-    main .sidebar{
-        height: 80px;
-        width: 100%;
-        bottom: 0;
-        flex-direction: row;
-        background: var(--white);
+    main .posts{
+        margin: auto;
     }
-    main .sidebar .settings-option{
-        margin-bottom: 0;
-        margin-right: 24px;
+    main .profile-wrapper .profile-container{
+        width: 70%;
     }
-   
-    main .sidebar .options-group-container:nth-child(1), main .sidebar .vertical-toggle{
-        flex-direction: row;
+    /* main .posts > section{
+        width: fit-content;
+    } */
+    main .posts .post-group-title .header-title{
+        line-height: 32px;
+        font-size: 26px;
     }
-    main .sidebar .options-group-container:nth-child(2){
-        flex-direction: row;
-        justify-content: right;
+    main .posts .post-group-title .header-title i{
+        font-size: 20px;
     }
-    main .sidebar .options-group-container:nth-child(1){
-        padding-top:0;
+    main .profile-container .person > img{
+        width: 180px;
+        height: 180px;
+        border-width: 5px;
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 915px) {
+    main{
+        padding-right: 5px;
+    }
+    header .page-list{
+        display: none;
+    }
     
+}
+@media screen and (max-width:700px) {
     header > div{
         padding: 5px;
         height: 40px;
@@ -1038,22 +1134,12 @@ footer .bottom-banner .terms a:hover{
     header .date-container .date-btn.right.double::before{
         left: -2px;
     }
-    main .sidebar{
-        padding-top: 10px;
-        height: 50px;
+    main .profile-wrapper .profile-container{
+        width: 90%;
     }
-    main .sidebar .vertical-toggle > a, main .sidebar .options-group-container > a:not(.vertical-toggle){
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-}
-@media screen and (max-width:700px) {
-   
     main .profile-container .person > img{
-        width: 180px;
-        height: 180px;
-        border-width: 5px;
+        width: 120px;
+        height: 120px;
     }
     main .profile-container .person .name{
         font-size: 20px;
@@ -1088,7 +1174,15 @@ footer .bottom-banner .terms a:hover{
     main .posts .tiles{
         grid-template-columns: 1fr;
     }
-
+    main .sidebar{
+        padding-top: 10px;
+        width: 40px;
+    }
+    main .sidebar .vertical-toggle > a, main .sidebar .options-group-container > a:not(.vertical-toggle){
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
     footer .links{
         justify-items: center;
         justify-content: space-around;
@@ -1190,6 +1284,30 @@ footer .bottom-banner .terms a:hover{
     }
     footer .bottom-banner{
         padding: 10px auto 15px;
+    }
+}
+@media screen and (max-width: 400px) {
+    main{
+        padding: 0;
+        gap: 5px;
+    }
+    ain .posts .post-group-title .header-title{
+        line-height: 24px;
+        font-size: 12px;
+    }
+    main .posts .post-group-title .header-title i{
+        font-size: 10px;
+    }
+    main .sidebar{
+        width: 30px;
+    }
+    main .sidebar .vertical-toggle > a, main .sidebar .options-group-container > a:not(.vertical-toggle){
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+    footer .contact-list ul{
+        gap: 2px;
     }
 }
 
